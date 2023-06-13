@@ -1,0 +1,11 @@
+Tipos de Dados: Em Go, as variáveis têm um tipo de dado declarado explicitamente. Isso significa que você precisa especificar o tipo da variável ao declará-la. Por exemplo, var idade int declara uma variável chamada idade do tipo int.
+
+Palavra-chave var: A palavra-chave var é usada para declarar variáveis em Go. Você pode usar a sintaxe var nomeDaVariavel tipo para declarar uma variável. Por exemplo, var nome string declara uma variável chamada nome do tipo string.
+
+Atribuição de Valor Inicial: Ao declarar uma variável, você pode atribuir um valor inicial opcional usando o operador de atribuição =. Por exemplo, var numero int = 10 declara uma variável chamada numero do tipo int e atribui o valor 10 a ela.
+
+Inferência de Tipo: Go também suporta a inferência de tipo, onde o tipo da variável pode ser inferido com base no valor atribuído a ela. Por exemplo, nome := "João" declara uma variável chamada nome do tipo string e atribui o valor "João" a ela. Nesse caso, o tipo da variável é inferido como string.
+
+Declaração Múltipla: É possível declarar várias variáveis em uma única instrução usando a sintaxe var nome1, nome2 tipo. Por exemplo, var a, b int declara duas variáveis a e b, ambas do tipo int.
+
+Constantes: Além das variáveis, Go também suporta a declaração de constantes usando a palavra-chave const. As constantes são valores imutáveis que são conhecidos em tempo de compilação.
