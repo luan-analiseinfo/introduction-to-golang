@@ -1,0 +1,4 @@
+package main: Todo programa Go começa com um pacote (package), e o nome main indica que esse é um programa executável.
+import "fmt": O comando import é usado para importar pacotes externos. Neste caso, estamos importando o pacote "fmt", que fornece funções para formatação de texto.
+func main() { ... }: Todo programa Go deve ter uma função main(), que é o ponto de entrada do programa.
+fmt.Println("hello world"): Aqui, estamos chamando a função Println() do pacote "fmt", que imprime a mensagem "hello world" no console.
