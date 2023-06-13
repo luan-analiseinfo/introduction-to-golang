@@ -1,0 +1,5 @@
+Source (código-fonte): O diretório source contém os arquivos do código-fonte do seu programa. Eles são geralmente organizados em pacotes e subpacotes, seguindo uma estrutura de diretórios. Cada arquivo de código-fonte possui a extensão .go e contém a implementação das funções e tipos do seu programa.
+
+Package (pacote): Um pacote é uma unidade de organização do código-fonte em Go. Ele agrupa um conjunto de arquivos relacionados que fornecem funcionalidades específicas. Os pacotes em Go permitem modularidade, reutilização de código e facilitam a manutenção do projeto. Um pacote pode ser importado por outros pacotes para usar suas funcionalidades.
+
+Bin (binário): O binário é o resultado da compilação do seu código-fonte. É um arquivo executável que pode ser executado em um sistema operacional específico. Quando você compila um programa em Go, o binário resultante é colocado no diretório bin (se você não especificar um local diferente). O binário pode ser distribuído e executado em outros sistemas compatíveis sem a necessidade de ter o código-fonte disponível.
