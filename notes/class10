@@ -1,0 +1,9 @@
+Declaração de Ponteiros: Um ponteiro é declarado colocando o asterisco * antes do tipo de dado. Por exemplo, var p *int declara uma variável chamada p que é um ponteiro para um valor do tipo int.
+
+Operador de Referência: O operador de referência & é usado para obter o endereço de memória de uma variável. Por exemplo, x := 10 e p := &x declaram uma variável x com o valor 10 e uma variável p que é um ponteiro para x (ou seja, contém o endereço de x).
+
+Operador de Desreferência: O operador de desreferência * é usado para acessar o valor armazenado em um ponteiro. Por exemplo, *p retorna o valor armazenado no endereço de memória apontado por p.
+
+Passagem por Referência: Em Go, os parâmetros de função são passados por valor por padrão, o que significa que uma cópia do valor é passada para a função. No entanto, é possível passar um ponteiro como argumento para uma função, permitindo que a função modifique diretamente o valor original.
+
+Alocação Dinâmica de Memória: Em Go, a alocação dinâmica de memória é tratada automaticamente pelo coletor de lixo (garbage collector). Isso significa que não é necessário gerenciar explicitamente a alocação ou desalocação de memória, como em algumas outras linguagens.
