@@ -1,0 +1,8 @@
+Uma estrutura (struct) em Go é uma coleção de campos que agrupa dados relacionados em um único tipo de dado.
+A declaração de uma struct é feita usando a palavra-chave type, seguida pelo nome da struct e a definição dos campos entre chaves {}.
+Os campos dentro de uma struct são declarados com um nome e um tipo de dado. Por exemplo, type Car struct { Name string; Age int } define uma struct Car com os campos Name do tipo string e Age do tipo int.
+Você pode criar uma instância de uma struct atribuindo valores aos seus campos. Por exemplo, car := Car{Name: "Ferrari", Age: 5} cria uma instância da struct Car com o nome "Ferrari" e a idade 5.
+Os campos de uma struct podem ser acessados usando a sintaxe de ponto. Por exemplo, car.Name retorna o valor do campo Name da instância car.
+As structs podem ser usadas para definir tipos de dados personalizados em Go, permitindo organizar e manipular dados de forma mais estruturada.
+As structs também podem conter métodos, que são funções que podem ser chamadas no contexto de uma instância da struct. Os métodos são definidos usando a sintaxe func (receiver) methodName().
+As structs em Go são passadas por valor por padrão. Ao atribuir ou passar uma instância de struct para uma função, uma cópia dos campos é feita. Se você precisa modificar a instância original, é necessário usar um ponteiro para a struct.
