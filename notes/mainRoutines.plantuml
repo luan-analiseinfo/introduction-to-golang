@@ -1,0 +1,60 @@
+@startuml
+skinparam monochrome true
+
+rectangle "Programa Principal" {
+    rectangle "Goroutine 1" as goroutine1 {
+        rectangle "Event 1: Heavy"
+    }
+    rectangle "Goroutine 2" as goroutine2 {
+        rectangle "Event 2: Heavy"
+    }
+    rectangle "Goroutine 3" as goroutine3 {
+        rectangle "Event 3: super heavy"
+    }
+    rectangle "Goroutine 4" as goroutine4 {
+        rectangle "Event 4: super heavy"
+    }
+
+    rectangle "Pool de Threads" as poolDeThreads {
+        rectangle "Thread 1" as thread1
+        rectangle "Thread 2" as thread2
+        rectangle "Thread 3" as thread3
+        rectangle "Thread 4" as thread4
+    }
+
+    rectangle "Processador Físico" as processador {
+        rectangle "Núcleo 1" as nucleo1
+        rectangle "Núcleo 2" as nucleo2
+    }
+
+    rectangle "Ambiente de Execução" as ambiente {
+        rectangle "Processador Virtual" as processadorVirtual {
+            rectangle "Núcleo Virtual 1" as nucleoVirtual1
+            rectangle "Núcleo Virtual 2" as nucleoVirtual2
+        }
+    }
+
+    goroutine1 --> poolDeThreads : Solicita thread
+    goroutine2 --> poolDeThreads : Solicita thread
+    goroutine3 --> poolDeThreads : Solicita thread
+    goroutine4 --> poolDeThreads : Solicita thread
+
+    poolDeThreads --> thread1 : Executa thread
+    poolDeThreads --> thread2 : Executa thread
+    poolDeThreads --> thread3 : Executa thread
+    poolDeThreads --> thread4 : Executa thread
+
+    thread1 --> nucleo1
+    thread2 --> nucleo2
+    thread3 --> nucleo1
+    thread4 --> nucleo2
+
+    nucleo1 --> nucleoVirtual1
+    nucleo2 --> nucleoVirtual2
+
+    goroutine1 --> "Event 1: Heavy" : Executa evento
+    goroutine2 --> "Event 2: Heavy" : Executa evento
+    goroutine3 --> "Event 3: super heavy" : Executa evento
+    goroutine4 --> "Event 4: super heavy" : Executa evento
+}
+@enduml
