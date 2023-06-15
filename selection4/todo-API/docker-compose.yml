@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  mysql:
+    image: mysql:latest
+    container_name: go_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: go_pass
+      MYSQL_DATABASE: go_database
+      MYSQL_USER: go_user
+      MYSQL_PASSWORD: go_pass
+    volumes:
+      - ./data:/var/lib/mysql
+      -  ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "3306:3306"
