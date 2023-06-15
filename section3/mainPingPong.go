@@ -13,7 +13,6 @@ func pinger(pinger <-chan int, ponger chan<- int) {
 		time.Sleep(time.Second)
 		ponger <- 1
 	}
-
 }
 
 // the pong prints a pong a waits for a pong
