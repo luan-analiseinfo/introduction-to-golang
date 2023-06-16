@@ -2,10 +2,17 @@ package model
 
 import (
 	"../views"
+	"net/url"
+	"strings"
 )
 
-func ReadAll() ([]views.PostRequest, error) {
-	rows, err := conn.Query("SELECT * FROM TODO")
+func ReadTodo(params url.Values) ([]views.PostRequest, error) {
+	query := "SELECT * FROM TODO WHERE 1 = 1 "
+	for k, v := range params {
+		query += "AND " + k + " = '" + strings.Join(v, "") + "'"
+	}
+
+	rows, err := conn.Query(query)
 	if err != nil {
 		return nil, err
 	}

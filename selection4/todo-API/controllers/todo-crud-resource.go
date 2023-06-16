@@ -12,7 +12,7 @@ func crud() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		switch r.Method {
 		case http.MethodGet:
-			readAll(w, r)
+			readTodo(w, r)
 		case http.MethodPost:
 			create(w, r)
 		case http.MethodPut:
@@ -26,14 +26,22 @@ func crud() http.HandlerFunc {
 }
 
 func deleteTodo(w http.ResponseWriter, r *http.Request) {
+	name := r.URL.Path[1:]
+	if err := model.DeleteTodo(name); err != nil {
+		w.Write([]byte(err.Error()))
+	}
+	json.NewEncoder(w).Encode(struct {
+		Status string `json:"status"`
+	}{"Item deleted"})
 }
 
 func update(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func readAll(w http.ResponseWriter, r *http.Request) {
-	data, err := model.ReadAll()
+func readTodo(w http.ResponseWriter, r *http.Request) {
+	params := r.URL.Query()
+	data, err := model.ReadTodo(params)
 	if err != nil {
 		w.Write([]byte(err.Error()))
 	}
