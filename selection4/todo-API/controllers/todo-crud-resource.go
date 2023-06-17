@@ -33,6 +33,7 @@ func deleteTodo(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(struct {
 		Status string `json:"status"`
 	}{"Item deleted"})
+	w.WriteHeader(http.StatusOK)
 }
 
 func update(w http.ResponseWriter, r *http.Request) {
@@ -46,6 +47,7 @@ func readTodo(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte(err.Error()))
 	}
 	json.NewEncoder(w).Encode(data)
+	w.WriteHeader(http.StatusOK)
 	log.Println(r.URL)
 }
 
@@ -56,6 +58,6 @@ func create(w http.ResponseWriter, r *http.Request) bool {
 		w.Write([]byte("Some error"))
 		return true
 	}
-	w.WriteHeader(http.StatusOK)
+	w.WriteHeader(http.StatusCreated)
 	return false
 }
